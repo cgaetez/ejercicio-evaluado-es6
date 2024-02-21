@@ -17,7 +17,6 @@ var Impuestos = /*#__PURE__*/function () {
     _classCallCheck(this, Impuestos);
     this.montoBrutoAnual = montoBrutoAnual;
     this.deducciones = deducciones;
-    this.clientes = [];
   }
   _createClass(Impuestos, [{
     key: "montoBrutoAnual",
@@ -34,25 +33,6 @@ var Impuestos = /*#__PURE__*/function () {
     },
     set: function set(nueva_deducciones) {
       this._deducciones = nueva_deducciones;
-    }
-
-    // Método para agregar un cliente
-  }, {
-    key: "agregarCliente",
-    value: function agregarCliente(cliente) {
-      this.clientes.push(cliente);
-    }
-    // Método para mostrar los detalles de todos los clientes
-  }, {
-    key: "mostrarClientes",
-    value: function mostrarClientes() {
-      this.clientes.forEach(function (cliente) {
-        console.log("Nombre: ".concat(cliente.nombre));
-        console.log("Monto Bruto Anual: ".concat(cliente._montoBrutoAnual));
-        console.log("Deducciones: ".concat(cliente._deducciones));
-        console.log("Impuesto: ".concat(cliente.impuesto));
-        console.log("---------------------------");
-      });
     }
   }]);
   return Impuestos;

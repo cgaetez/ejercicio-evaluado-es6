@@ -1,22 +1,11 @@
 // Importar las clases Cliente e Impuestos
-import Cliente from '.modulo/Cliente';
-import Impuestos from '.modulo/Impuestos';
+import Cliente from './cliente.js';
+import Impuestos from './impuestos.js';
 
-// Crear instancia de Impuestos con monto bruto anual y deducciones
-const impuestos = new Impuestos(100000, 20000);
+let persona1 = new Cliente('Claudia'); 
+let impuesto = new Impuestos(100000,0);
 
-// Crear instancias de clientes
-const cliente1 = new Cliente("Cliente1", impuestos.montoBrutoAnual, impuestos.deducciones);
-const cliente2 = new Cliente("Cliente2", impuestos.montoBrutoAnual, impuestos.deducciones);
+persona1.impuesto = impuesto;
 
-// Agregar clientes a la lista de clientes de Impuestos
-impuestos.agregarCliente(cliente1);
-impuestos.agregarCliente(cliente2);
-
-// Calcular impuesto anual para un cliente específico
-const nombreCliente = "Cliente1";
-const impuestoAnual = impuestos.calcularImpuestoAnual(nombreCliente);
-console.log(`El impuesto anual para ${nombreCliente} es: ${impuestoAnual}`);
-
-//mostrar clientes
-impuestos.mostrarClientes(); 
+console.log(persona1);
+console.log(`El impuesto a pagar de ${persona1.nombre} es ${persona1.calcularImpuesto()}`);

@@ -1,9 +1,7 @@
 class Cliente {
-    constructor(nombre, montoBrutoAnual, deducciones) {
+    constructor(nombre) {
         this._nombre = nombre
-        this._montoBrutoAnual = montoBrutoAnual
-        this._deducciones = deducciones
-        this._impuesto = 0
+        this._impuesto = null
     }
 
     get nombre() {
@@ -15,10 +13,13 @@ class Cliente {
     get impuesto() {
         return this._impuesto
     }
+    set impuesto(nuevo_impuesto){
+        this._impuesto = nuevo_impuesto
+    }
 
     calcularImpuesto(){
-        this._impuesto = (this._montoBrutoAnual - this._deducciones) * 0.21;
+        return (this._impuesto.montoBrutoAnual-this._impuesto.deducciones)*0.21;
     }
 }
 // Exportar la clase Cliente
-module.exports = Cliente;
+export default Cliente;
